@@ -1,0 +1,243 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&family=Roboto+Mono:wght@600;700&display=swap');
+
+  @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto+Flex:opsz@8..144&family=Roboto+Mono:wght@600;700&display=swap');
+
+ @import url(./frames.css);
+
+
+//  variable colors
+
+$principal_color: black;
+
+//--General Styels ------
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Flex', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+    
+}
+img{
+    max-width: 100%;
+    fill: cover;
+    display: block;
+}
+
+// ---Logo----
+
+.logo{
+    width: 200px;
+    padding-top: 1rem;
+    padding-left: 1rem;
+}
+
+/* ----- Header  APP.JSX ----- */
+
+.principal_header{
+    padding: 2rem 0;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+   
+}
+.principal_Title{
+
+    color: rgb(159, 159, 7);
+}
+
+
+.switch{
+    background-color: #343D5B;
+    
+    border-radius: 1000px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    outline: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: .3rem 0.5rem;
+    gap: 1rem;
+    
+
+    &::after{
+    content: "";
+    width: 43px;
+    height: 43px;
+    position: absolute;
+    background-color: #f1f1f1;
+    top: 0;
+    left: 0;
+    right: unset;
+    border-radius: 50%;
+    transition: .3s ease all;
+    box-shadow: 0 0 4px 4px rgb(0, 0, 0,.2);
+
+    }
+
+     &.active{
+         background-color: orange;
+         color: black;
+
+         &::after{
+            left: unset;
+            right: 0;
+         }
+     }
+}
+
+
+
+.switch span{
+    display: flex;
+    background-color: none;
+    color:#fff;
+}
+
+
+
+
+/* ---------- Loading page --------------------------*/
+
+.container_loading_page{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    gap: 2rem;
+    background: linear-gradient(135deg, #827180, darkcyan);
+}
+
+.logo_loading{
+    width: 200px;
+    height: 200px;
+    margin-top: -8rem;
+    animation-duration: 2.5s ;
+}
+.title_loading_page{
+    color: rgb(214, 255, 255);
+    font-weight: 500;
+    font-size: 28px;
+    text-shadow: 0 4px 8px rgb(0, 0, 0);
+    font-family: 'Abril Fatface', cursive;
+    animation-duration: 2s ;
+    /* font-family: 'Abril Fatface', cursive;
+font-family: 'Roboto Flex', sans-serif;
+font-family: 'Roboto Mono', monospace;
+     */
+}
+
+/*-------- Input Name ------- */
+
+.container_home{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    // gap: 0.5rem;
+}
+.container_img_inputName{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+.container_img_inputName img{
+    height: 300px;
+    margin-bottom: 1.5rem;
+}
+.button_input_Name{
+    display: flex;
+    margin-top: 1.5rem;
+}
+.button_input_Name input{
+    border-radius: 20px;
+    padding: 1rem;
+    
+}
+.button_input_Name button{
+     border-radius: 20px;
+    position: relative;
+    right: 2rem;
+    background-color: #DD1A1A;
+    color: #f1f1f1;
+    padding: 0.5rem;
+    box-shadow: 0 4px 8px rgb(0, 0, 0);;
+}
+::placeholder{
+    font-size: 20px;
+}
+
+// ----Pokedex Component ------
+
+.container_Pokedex{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.title_Pokedex b{
+    color: #DD1A1A;
+}
+.container_borrador{
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+}
+.container_button_back{
+    display: flex;
+    justify-content: end;
+}
+.container_button_back button{
+    border-radius: 50%;
+    padding: 1rem;
+    background-color: #DD1A1A;
+    color: #f1f1f1;
+    box-shadow: 0 4px 8px rgb(0, 0, 0); ;
+}
+
+
+/*-------- Responsive min-width 600 px ------- */
+
+@media screen and (min-width:600px) {
+// ---- Loading Page ---- 
+
+.logo_loading{
+    width: 300px;
+    height: 300px;
+  
+}
+
+.title_loading_page{
+    font-weight: 500;
+    font-size: 50px;
+    
+}
+// ----Input Name -----
+
+.title_home{
+    font-size: 50px;
+}
+.container_img_inputName{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container_img_inputName label{
+    font-size: 40px;
+    font-weight: bold;
+}
+.container_img_inputName input{
+     font-size: 25px;
+    font-weight: bold;
+}
+    
+}
