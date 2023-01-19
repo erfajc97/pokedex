@@ -18,7 +18,7 @@ function App() {
     setTimeout(() => {
       
       setLoadingPage(false)
-    }, 3000);
+    }, 100);
   
     const switchOn = () =>{
       setSwitchMode(!switchMode);
@@ -33,12 +33,23 @@ function App() {
   return (
     <div className="App">
       <HashRouter>
+        <div className="container_principal_logo">
+
         <img
           style={{ display: loadingPage ? "none" : "flex" }}
           className="logo"
           src={Logo}
           alt=""
-        />
+          />
+          <div className="barra_logo">
+            <div className="circule">
+              <div className="circule_small">
+                <div className="smallest">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <header
           style={{ display: loadingPage ? "none" : "flex" }}
           className="principal_header">
