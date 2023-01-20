@@ -74,14 +74,15 @@ let letterColor ={
             background: changeColorCardPokemon(),
           }}
           className="container_background_card divextra"></div>
-        <div className="container_img_id">
+        <div className="container_img_id ">
           <img
+            className="img_idx bounce-in-top"
             src={pokemonId.sprites?.other.dream_world.front_default}
             alt=""
           />
         </div>
         <p className="containerId">#{id} </p>
-        <div className="container_name_barritas">
+        <div className=" animate__animated animate__heartBeat container_name_barritas">
           <h2 style={letterColor}> {upperCaseName} </h2>
         </div>
         <div className="container_width_heigth">
@@ -100,7 +101,8 @@ let letterColor ={
               {pokemonId.types?.map((type, i) => (
                 <p
                   style={{
-                    background: changeColorCardPokemon(), color: '#fff'
+                    background: changeColorCardPokemon(),
+                    color: "#fff",
                   }}
                   className="info_p_type"
                   key={i}>
@@ -130,7 +132,7 @@ let letterColor ={
       <div style={myStyle} className="container_moviments">
         {pokemonId.moves?.map((m, i) => (
           <div key={i} className="container_p_moviments">
-            <p>{m.move.name}</p>
+            <p className="animate__animated animate__flash">{m.move.name}</p>
           </div>
         ))}
       </div>

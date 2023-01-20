@@ -20,16 +20,16 @@ const InputName = ({ userName }) => {
           Hello Trainer
         </h2>
       </div>
-      <div className="container_img_inputName">
+      <div className="container_img_inputName ">
         <img
-          className=" animate__animated animate__backInLeft"
+          className="  animate__animated animate__backInLeft"
           src={"https://i.gifer.com/WiCJ.gif"}
         />
 
         <label htmlFor="name_trainer">Give me your name to star!</label>
         <div className="button_input_Name">
           <input
-          required
+            required
             placeholder="Your name"
             id="name_trainer"
             type="text"

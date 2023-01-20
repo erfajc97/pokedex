@@ -392,6 +392,8 @@ img {
   border-radius: 20px;
   padding: 0.5rem;
   background-color: #E5E5E5;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
 }
 
 .container_title_moviment {

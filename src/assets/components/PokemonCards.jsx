@@ -74,7 +74,11 @@ const PokemonCards = ({ url }) => {
         }}
         className="container_background_card"></div>
       <div className="container_img_pokemon">
-        <img src={pokemon.sprites?.other.dream_world.front_default} alt="" />
+        <img
+          className="img_idx  bx-tada"
+          src={pokemon.sprites?.other.dream_world.front_default}
+          alt=""
+        />
       </div>
       <div className="container_name_pokemmon">
         <h3 style={letterColor}>{upperCaseName}</h3>
