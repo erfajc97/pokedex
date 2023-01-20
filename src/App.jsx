@@ -31,6 +31,7 @@ function App() {
   return (
     <div className="App">
       <HashRouter>
+        
         <div className="container_principal_logo">
           <img
             style={{ display: loadingPage ? "none" : "flex" }}

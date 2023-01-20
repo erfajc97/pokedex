@@ -15,7 +15,7 @@ const PokedexId = () => {
       .get(`https://pokeapi.co/api/v2/pokemon/${id}`)
       .then((res) => setPokemonId(res.data));
   }, []);
-  console.log(pokemonId);
+  // console.log(pokemonId);
 
   function firstLetterUpCase(text) {
     let name = text?.split(" ");

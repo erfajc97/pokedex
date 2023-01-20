@@ -4,13 +4,14 @@ import { useNavigate } from "react-router-dom";
 
 const PokemonCards = ({ url }) => {
   const [pokemon, setPokemon] = useState({});
+
   const navigate = useNavigate();
 
   useEffect(() => {
     axios.get(url).then((res) => setPokemon(res.data));
   }, []);
 
-  //   console.log(pokemon);
+    console.log(pokemon);
 
   function firstLetterUpCase(text) {
     let name = text?.split(" ");
@@ -63,11 +64,15 @@ const PokemonCards = ({ url }) => {
     color: `${changeColorCardPokemon()}`,
   };
 
+  
+
   return (
     <div
       style={myStyle}
       onClick={() => navigate(`/pokedex/${pokemon.id}`)}
       className="container_pokemons">
+     
+
       <div
         style={{
           background: changeColorCardPokemon(),
@@ -75,7 +80,7 @@ const PokemonCards = ({ url }) => {
         className="container_background_card"></div>
       <div className="container_img_pokemon">
         <img
-          className="img_idx  bx-tada"
+          className="img_idx animate__animated animate__heartBeat"
           src={pokemon.sprites?.other.dream_world.front_default}
           alt=""
         />
@@ -94,19 +99,19 @@ const PokemonCards = ({ url }) => {
       <div className="container_grid_info_card">
         <div className="info-abilities_card">
           <p>Hp</p>
-          <b> {} </b>
+          <b> {pokemon.stats?.[0].base_stat} </b>
         </div>
         <div className="info-abilities_card">
           <p>Attack</p>
-          <b> {} </b>
+          <b> {pokemon.stats?.[1].base_stat} </b>
         </div>
         <div className="info-abilities_card">
           <p>Defense</p>
-          <b> {} </b>
+          <b> {pokemon.stats?.[2].base_stat} </b>
         </div>
         <div className="info-abilities_card">
           <p>Speed</p>
-          <b> {} </b>
+          <b> {pokemon.stats?.[5].base_stat} </b>
         </div>
       </div>
     </div>
