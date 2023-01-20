@@ -253,17 +253,167 @@ img {
 .container_pokemons {
   width: 100%;
   margin: 0 auto;
-  border: 0.25rem solid;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 20px;
   box-shadow: 5px 5px 12px rgb(0, 0, 0);
+  position: relative;
+}
+
+.container_pokemons:hover {
+  transform: scale(1.1);
+}
+
+.container_background_card {
+  width: 100%;
+  height: 170px;
+  border-radius: 20px 20px 0 0;
+}
+
+.container_img_pokemon {
+  width: 50%;
+  position: absolute;
+  top: 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.container_name_pokemmon {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.container_type_pokecard {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.container_grid_info_card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.container_pokedexId {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.containerId {
+  border: 0.1rem solid;
+  padding: 0.2rem 1rem;
+}
+
+.container_principal_info_pokedexId {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 2rem;
+  padding: 0rem 0 1rem 0;
+  box-shadow: 0 4px 20px rgb(0, 0, 0);
+  position: relative;
+}
+
+.divextra {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 4rem;
+}
+
+.container_img_id {
+  position: absolute;
+  top: -2rem;
+}
+
+.container_width_heigth {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.container_type_ability {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.info_type {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.info_p_type {
+  border: 0.1rem solid;
+  padding: 0.2rem 1rem;
+  box-shadow: 0 4px 4px rgb(0, 0, 0);
+}
+
+.container_moviments {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 0.25rem solid;
+  margin-top: 2rem;
+  padding: 0.2rem;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgb(0, 0, 0);
+  height: 450px;
+  overflow: hidden;
+}
+
+.container_p_moviments {
+  display: flex;
+  gap: 4rem;
+  padding: 1rem;
+}
+
+.container_moviments p {
+  border: 0.1px solid;
+  border-radius: 20px;
+  padding: 0.5rem;
+  background-color: #E5E5E5;
+}
+
+.container_title_moviment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.title_moviments {
+  border: 0.2rem solid;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgb(0, 0, 0);
+  font-size: 30px;
+  background-color: #676767;
+  color: #f1f1f1;
 }
 
 /*-------- Responsive min-width 600 px ------- */
-@media screen and (min-width: 600px) {
+/*-------- Responsive min-width 1000 px ------- */
+@media screen and (min-width: 1000px) {
   .container_loading_page {
     background-image: url(../img/forest.jpg);
   }
@@ -309,5 +459,52 @@ img {
   .container_img_inputName input {
     font-size: 25px;
     font-weight: bold;
+  }
+  .container_pokedexId {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .container_img_id {
+    top: -3rem;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .divextra {
+    margin-bottom: 2rem;
+  }
+  .container_width_heigth {
+    font-size: 30px;
+    gap: 5rem;
+    margin: 1.5rem 0;
+  }
+  .container_type_ability {
+    gap: 5rem;
+  }
+  .container_type_ability h3 {
+    font-size: 30px;
+  }
+  .info_type {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    margin: 1.5rem 0;
+  }
+  .info_p_type {
+    border: 0.1rem solid;
+    padding: 0.2rem 1rem;
+    box-shadow: 0 4px 4px rgb(0, 0, 0);
+  }
+  .container_name_barritas > h2 {
+    font-size: 50px;
+    margin-top: 1rem;
+  }
+  .containerId {
+    font-size: 30px;
+  }
+  .container_moviments {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }/*# sourceMappingURL=style.css.map */
