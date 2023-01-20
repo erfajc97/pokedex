@@ -6,6 +6,7 @@
  @import url(./frames.css);
 
 
+
 //  variable colors
 
 $principal_color: black;
@@ -106,7 +107,9 @@ img{
     text-align: center;
     padding: .3rem 0.5rem;
     gap: 1rem;
-    
+      &:hover{
+        transform: scale(1.1);
+    }
 
     &::after{
     content: "";
@@ -156,7 +159,10 @@ img{
     align-items: center;
     margin: 0 auto;
     gap: 2rem;
-    background: linear-gradient(135deg, #827180, darkcyan);
+    // background: linear-gradient(135deg, #827180, darkcyan);
+    background-image: url(../img/196c6c0c541d42385dc1bda77a76370a.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .logo_loading{
@@ -166,16 +172,17 @@ img{
     animation-duration: 2.5s ;
 }
 .title_loading_page{
-    color: rgb(214, 255, 255);
+    color: rgb(255, 255, 255);
     font-weight: 500;
     font-size: 28px;
-    text-shadow: 0 4px 8px rgb(0, 0, 0);
+    text-shadow: 20px 20px 40px rgb(0, 0, 0);
     font-family: 'Abril Fatface', cursive;
     animation-duration: 2s ;
+   
     /* font-family: 'Abril Fatface', cursive;
 font-family: 'Roboto Flex', sans-serif;
-font-family: 'Roboto Mono', monospace;
-     */
+font-family: 'Roboto Mono', monospace;*/
+     
 }
 
 /*-------- Input Name ------- */
@@ -195,6 +202,9 @@ font-family: 'Roboto Mono', monospace;
 .container_img_inputName img{
     height: 300px;
     margin-bottom: 1rem;
+    &:hover{
+        transform: scale(1.2);
+    }
 }
 .button_input_Name{
     display: flex;
@@ -203,6 +213,7 @@ font-family: 'Roboto Mono', monospace;
 .button_input_Name input{
     border-radius: 20px;
     padding: 1rem;
+
     
 }
 .button_input_Name button{
@@ -212,7 +223,11 @@ font-family: 'Roboto Mono', monospace;
     background-color: #DD1A1A;
     color: #f1f1f1;
     padding: 0.5rem;
-    box-shadow: 0 4px 8px rgb(0, 0, 0);;
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+    
+    &:hover{
+        transform: scale(1.1);
+    }
 }
 ::placeholder{
     font-size: 20px;
@@ -252,6 +267,11 @@ font-family: 'Roboto Mono', monospace;
 
 // ----LOGO-----
 
+.container_loading_page{
+    
+    background-image: url(../img/forest.jpg);
+   
+}
 .logo{
     width: 300px;
     height: 100px;

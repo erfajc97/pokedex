@@ -76,6 +76,7 @@ function App() {
             <Route path="/pokedexId" element={<PokedexId />} />
           </Routes>
         )}
+       
       </HashRouter>
     </div>
   );

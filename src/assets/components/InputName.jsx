@@ -16,7 +16,9 @@ const InputName = ({ userName }) => {
   return (
     <div className="container_home">
       <div className="container_title_home">
-        <h2 className="title_home">Hello Trainer</h2>
+        <h2 className="title_home animate__animated animate__hinge">
+          Hello Trainer
+        </h2>
       </div>
       <div className="container_img_inputName">
         <img src={"https://i.gifer.com/WiCJ.gif"} />
@@ -24,7 +26,7 @@ const InputName = ({ userName }) => {
         <label htmlFor="name_trainer">Give me your name to star!</label>
         <div className="button_input_Name">
           <input
-           placeholder="Your name"
+            placeholder="Your name"
             id="name_trainer"
             type="text"
             value={inputUser}
