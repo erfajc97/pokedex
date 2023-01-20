@@ -1,34 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
-import { HashRouter, Route, Routes } from 'react-router-dom'
-import InputName from './assets/components/InputName'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import "./App.css";
+import { HashRouter, Route, Routes } from "react-router-dom";
+import InputName from "./assets/components/InputName";
 import Pokedex from "./assets/components/Pokedex";
 import PokedexId from "./assets/components/PokedexId";
 import { useDispatch, useSelector } from "react-redux";
-import Loading from './assets/components/Loading'
+import Loading from "./assets/components/Loading";
 import Logo from "./assets/img/image 11.png";
+import ProtectedRoutes from "./assets/components/ProtectedRoute";
 
 function App() {
   const [loadingPage, setLoadingPage] = useState(true);
-  const [switchMode , setSwitchMode] = useState(false)
-  const userName = useSelector(state => state.userName)
+  const [switchMode, setSwitchMode] = useState(false);
+  const userName = useSelector((state) => state.userName);
 
-  
-    setTimeout(() => {
-      
-      setLoadingPage(false)
-    }, 3000);
-  
-    const switchOn = () =>{
-      setSwitchMode(!switchMode);
-    }
+  setTimeout(() => {
+    setLoadingPage(false);
+  }, 3000);
 
-    let classDark = ""
-    if(switchMode == true){
-      classDark="active"
-    }
-    
+  const switchOn = () => {
+    setSwitchMode(!switchMode);
+  };
+
+  let classDark = "";
+  if (switchMode == true) {
+    classDark = "active";
+  }
 
   return (
     <div className="App">
@@ -72,14 +70,18 @@ function App() {
         ) : (
           <Routes>
             <Route path="/" element={<InputName userName={userName} />} />
+            <Route element={<ProtectedRoutes/>} >
+
             <Route path="/pokedex" element={<Pokedex />} />
-            <Route path="/pokedexId" element={<PokedexId />} />
+            <Route path="/pokedex/:id" element={<PokedexId />} />
+
+            </Route>
+
           </Routes>
         )}
-       
       </HashRouter>
     </div>
   );
 }
 
-export default App
+export default App;

@@ -29,6 +29,7 @@ const InputName = ({ userName }) => {
         <label htmlFor="name_trainer">Give me your name to star!</label>
         <div className="button_input_Name">
           <input
+          required
             placeholder="Your name"
             id="name_trainer"
             type="text"
