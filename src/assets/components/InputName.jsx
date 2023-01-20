@@ -42,6 +42,8 @@ const InputName = ({ userName }) => {
           </button>
         </div>
       </div>
+
+      <br /><br /><br />
     </div>
   );
 };
