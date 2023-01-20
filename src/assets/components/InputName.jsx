@@ -16,12 +16,15 @@ const InputName = ({ userName }) => {
   return (
     <div className="container_home">
       <div className="container_title_home">
-        <h2 className="title_home animate__animated animate__hinge">
+        <h2 className="title_home animate__animated animate__backInDown">
           Hello Trainer
         </h2>
       </div>
       <div className="container_img_inputName">
-        <img src={"https://i.gifer.com/WiCJ.gif"} />
+        <img
+          className=" animate__animated animate__backInLeft"
+          src={"https://i.gifer.com/WiCJ.gif"}
+        />
 
         <label htmlFor="name_trainer">Give me your name to star!</label>
         <div className="button_input_Name">
