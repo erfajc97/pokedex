@@ -6,26 +6,19 @@ import PokemonCards from "./PokemonCards";
 
 const Pokedex = () => {
   const [pokemon, setPokemon] = useState([]);
-  // const [searchId, setSearchId] = useState("");
-  // const [localsuggest, setLocalsuggest] = useState([]);
+  const [searchId, setSearchId] = useState("");
+  const [typePokemon, setTypePokemon] = useState([]);
   useEffect(() => {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/`)
       .then((res) => setPokemon(res.data.results));
+
+    axios
+      .get(`https://pokeapi.co/api/v2/type/`)
+      .then((res) => setTypePokemon(res.data.results));
   }, []);
 
-  // console.log(pokemon);
-
-  // useEffect(() => {
-  //   if (searchId) {
-  //     axios
-  //       .get(`https://pokeapi.co/api/v2/pokemon/${searchId}`)
-  //       .then((res) => setLocalsuggest(res.data.results));
-  //   } else {
-  //     setLocalsuggest([]);
-  //     // setBackg(true);
-  //   }
-  // }, [searchId]);
+  // console.log(typePokemon);
 
   const userName = useSelector((state) => state.userName);
   const navigate = useNavigate();
@@ -33,11 +26,13 @@ const Pokedex = () => {
     navigate(-1);
   };
 
-  // const searchType = () => {
-  //   const url = `https://pokeapi.co/api/v2/pokemon/${searchId}/`;
+  const searchType = () => {
+    navigate(`/pokedex/${searchId.toLowerCase()}`);
+  };
 
-  //   axios.get(url).then((res) => setGeneralInfo(res.data));
-  // };
+  const filterType = (e) => {
+    axios.get(e.target.value).then((res) => setPokemon(res.data.pokemon));
+  };
 
   return (
     <div className="container_Pokedex">
@@ -49,26 +44,29 @@ const Pokedex = () => {
           <input
             className="inputSearch"
             type="text"
-            // placeholder="Write a number ( 1 - 126 )"
-            // value={searchId}
-            // onChange={(e) => setSearchId(e.target.value)}
+            placeholder=" Search a Pokemon"
+            value={searchId}
+            onChange={(e) => setSearchId(e.target.value)}
           />
 
-          <button
-            className="button__Search"
-            // onClick={searchType}
-          >
+          <button className="button__Search" onClick={searchType}>
             Search
           </button>
         </div>
-        <div className="containerSuggest">
-          <h3>All Pokemons</h3>{" "}
-          <i className="bx bx-chevron-down bx-md bx-fade-down"></i>
-        </div>
+        <select onChange={filterType} className="containerSuggest">
+          {typePokemon?.map((p, index) => (
+            <option className="option" value={p.url} key={index}>
+              {p?.name}
+            </option>
+          ))}
+        </select>
 
         <ul className="container__pokemonCard">
           {pokemon.map((pokemon, index) => (
-            <PokemonCards key={index} url={pokemon.url} />
+            <PokemonCards
+              key={pokemon.url ? pokemon.url : pokemon.pokemon.url}
+              url={pokemon.url ? pokemon.url : pokemon.pokemon.url}
+            />
           ))}
         </ul>
 

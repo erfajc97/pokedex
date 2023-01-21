@@ -233,7 +233,7 @@ font-family: 'Roboto Mono', monospace;*/
     height: 40px;
     margin-top: 20px;
     margin-bottom: 10px;
-    padding-left: 2rem;
+    padding-left: 1rem;
     font-size: 20px;
     // box-shadow: 0 4px 9px rgb(0, 0, 0);
  } 
@@ -259,6 +259,13 @@ font-family: 'Roboto Mono', monospace;*/
  }
 }
 
+.inputSearch{
+
+  &::placeholder{
+    font-size: 15px;
+  }
+}
+
  .containerSuggest{
     display: flex;
     flex-direction: column;
@@ -272,11 +279,16 @@ font-family: 'Roboto Mono', monospace;*/
     margin-bottom: 10px;
     margin-top: 20px;
     border-radius: 10px;
+    padding-top: 0.5rem;
 
     &:hover{
       transform: scale(1.05);
     }
   }
+  .option{
+    font-size: 15px;
+  }
+
   .containerSuggest i{
     width: 20px;
     position: absolute;
@@ -533,6 +545,17 @@ font-family: 'Roboto Mono', monospace;*/
     position: relative;
     left: 70%;
     bottom: 5rem;
+    padding-top: 0.5rem;
+
+   
+  }
+  .option{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+   
   }
 
   // ----Input Name -----

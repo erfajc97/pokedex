@@ -11,7 +11,7 @@ const PokemonCards = ({ url }) => {
     axios.get(url).then((res) => setPokemon(res.data));
   }, []);
 
-    console.log(pokemon);
+    // console.log(pokemon);
 
   function firstLetterUpCase(text) {
     let name = text?.split(" ");

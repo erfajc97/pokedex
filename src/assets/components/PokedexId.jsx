@@ -13,7 +13,8 @@ const PokedexId = () => {
   useEffect(() => {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${id}`)
-      .then((res) => setPokemonId(res.data));
+      .then((res) => setPokemonId(res.data))
+      .catch(() => navigate("/pokedex"));
   }, []);
   // console.log(pokemonId);
 
