@@ -3,7 +3,7 @@ import { userN } from "../../../src/store/slices/userName.slice";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-const InputName = ({ userName }) => {
+const InputName = ({ userName, darkmode }) => {
   const [inputUser, setInputUser] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ const InputName = ({ userName }) => {
   };
 
   return (
-    <div className="container_home">
+    <div className={`container_home  ${darkmode ? "darkmode" : ""}`}>
       <div className="container_title_home">
         <h2 className="title_home animate__animated animate__backInDown">
           Hello Trainer
@@ -37,13 +37,13 @@ const InputName = ({ userName }) => {
             onChange={(e) => setInputUser(e.target.value)}
           />
 
-          <button onClick={clicButton}>
+          <button
+            style={{ backgroundColor: darkmode ? "#6791B9" : "#dd1a1a" }}
+            onClick={clicButton}>
             <i className="bx bxl-telegram bx-lg"></i>
           </button>
         </div>
       </div>
-
-      <br /><br /><br />
     </div>
   );
 };

@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const PokemonCards = ({ url }) => {
+const PokemonCards = ({ url, darkmode }) => {
   const [pokemon, setPokemon] = useState({});
 
   const navigate = useNavigate();
@@ -11,7 +11,7 @@ const PokemonCards = ({ url }) => {
     axios.get(url).then((res) => setPokemon(res.data));
   }, []);
 
-    // console.log(pokemon);
+  // console.log(pokemon);
 
   function firstLetterUpCase(text) {
     let name = text?.split(" ");
@@ -58,7 +58,7 @@ const PokemonCards = ({ url }) => {
       return "grey";
     } else if (typeTwo === "steel" || typeOne === "") {
       return "#0093B2";
-    }else{
+    } else {
       return "grey";
     }
   };
@@ -70,15 +70,11 @@ const PokemonCards = ({ url }) => {
     color: `${changeColorCardPokemon()}`,
   };
 
-  
-
   return (
     <div
       style={myStyle}
       onClick={() => navigate(`/pokedex/${pokemon.id}`)}
       className="container_pokemons">
-     
-
       <div
         style={{
           background: changeColorCardPokemon(),
