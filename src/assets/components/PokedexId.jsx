@@ -140,7 +140,7 @@ const PokedexId = ({ darkmode }) => {
         {pokemonId.moves?.map((m, i) => (
           <div key={i} className="container_p_moviments">
             <p
-              style={{ color: darkmode ? "black" : "#fff" }}
+              style={{ color: darkmode ? "black" : "#343d5b" }}
               className="animate__animated animate__flash">
               {m.move.name}
             </p>

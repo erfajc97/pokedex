@@ -32,7 +32,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className={`dark ${darkmode ? "darkmode" : ""}`}>
+      <div className={`dark ${darkmode ? "darkmode" : "ligthmode"}`}>
         <HashRouter>
           <div
             style={{ backgroundColor: darkmode ? "#6791B9" : "#dd1a1a" }}

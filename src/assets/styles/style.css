@@ -7,6 +7,11 @@
   color: #f1f1f1;
 }
 
+.ligthmode {
+  background-color: #f1f1f1;
+  color: #343d5b;
+}
+
 * {
   margin: 0;
   padding: 0;
