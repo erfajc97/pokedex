@@ -54,6 +54,12 @@ const PokemonCards = ({ url }) => {
       return "#030706";
     } else if (typeTwo === "fairy" || typeOne === "") {
       return "#981844";
+    } else if (typeTwo === "psychic" || typeOne === "") {
+      return "grey";
+    } else if (typeTwo === "steel" || typeOne === "") {
+      return "#0093B2";
+    }else{
+      return "grey";
     }
   };
 

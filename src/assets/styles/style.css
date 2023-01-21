@@ -321,6 +321,7 @@ img {
   grid-auto-rows: 20rem;
   grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
   gap: 2rem;
+  margin-bottom: 5rem;
 }
 
 .container_pokemons {
@@ -486,6 +487,58 @@ img {
   color: #f1f1f1;
 }
 
+footer {
+  position: fixed;
+  width: 80%;
+  margin: 0 auto;
+  bottom: 0;
+  left: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(3, 7, 6, 0.2470588235);
+  border-radius: 10px 10px 0 0;
+}
+
+.containerbuttonFooter {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.btn-back {
+  font-size: 30px;
+  background-color: #dd1a1a;
+  color: #f1f1f1;
+  border-radius: 10px 0 0 10px;
+  padding: 0.25rem;
+}
+.btn-back:hover {
+  transform: scale(1.1);
+}
+
+.btn-next {
+  font-size: 30px;
+  background-color: #dd1a1a;
+  color: #f1f1f1;
+  border-radius: 0 10px 10px 0;
+  padding: 0.25rem;
+}
+.btn-next:hover {
+  transform: scale(1.1);
+}
+
+.pagination_numbers {
+  font-size: 30px;
+  padding: 0 1rem;
+  border-radius: 10px;
+}
+.pagination_numbers:hover {
+  transform: scale(1.1);
+  color: #839cec;
+}
+
 /*-------- Responsive min-width 600 px ------- */
 /*-------- Responsive min-width 1000 px ------- */
 @media screen and (min-width: 1000px) {
@@ -600,5 +653,37 @@ img {
   }
   .container_moviments {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  footer {
+    width: 90%;
+    left: 5rem;
+    background-color: rgba(250, 250, 250, 0);
+  }
+  .containerbuttonFooter {
+    width: 50%;
+    justify-content: space-between;
+    background-color: rgba(0, 60, 255, 0.1019607843);
+    padding: 0.25rem 0;
+    border-radius: 20px;
+  }
+  .btn-back {
+    font-size: 30px;
+    background-color: rgba(221, 26, 26, 0.5921568627);
+    color: #f1f1f1;
+    border-radius: 10px 0 0 10px;
+    padding: 0.25rem;
+  }
+  .btn-next {
+    font-size: 30px;
+    background-color: rgba(221, 26, 26, 0.5921568627);
+    color: #f1f1f1;
+    border-radius: 0 10px 10px 0;
+    padding: 1rem 0.25rem;
+  }
+  .pagination_numbers {
+    font-size: 30px;
+    padding: 0 1rem;
+    background-color: rgba(52, 61, 91, 0.7215686275);
+    color: #e3e3e3;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -58,7 +58,14 @@ const changeColorCardPokemon = () => {
     return "#030706";
   } else if (typeTwo === "fairy" || typeOne === "") {
     return "#981844";
+  } else if (typeTwo === "psychic" || typeOne === "") {
+    return "#CEB8D7";
+  } else if (typeTwo === "steel" || typeOne === "") {
+    return "#0093B2";
+  } else {
+    return "#CEB8D7";
   }
+
 };
 
 let myStyle = {

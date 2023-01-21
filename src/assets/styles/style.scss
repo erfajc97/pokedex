@@ -294,6 +294,7 @@ font-family: 'Roboto Mono', monospace;*/
     position: absolute;
     top: -1rem;
     right: 2.5rem;
+   
   }
 
 .container_Pokedex {
@@ -327,6 +328,7 @@ font-family: 'Roboto Mono', monospace;*/
   grid-auto-rows: 20rem;
   grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
   gap: 2rem;
+  margin-bottom: 5rem;
 }
 .container_pokemons {
   width: 100%;
@@ -484,6 +486,59 @@ font-family: 'Roboto Mono', monospace;*/
     background-color: #676767;
     color: #f1f1f1;
 }
+// Buttons pagination -----
+
+footer{
+  position: fixed;
+  width: 80%;
+  margin: 0 auto;
+  bottom: 0;
+  left: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #0307063f;
+  border-radius: 10px 10px 0 0;
+}
+.containerbuttonFooter{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  
+}
+.btn-back{
+  font-size: 30px;
+  background-color: #dd1a1a;
+  color: #f1f1f1;
+  border-radius: 10px 0 0 10px;
+  padding: 0.25rem;
+  &:hover{
+    transform: scale(1.1);
+  }
+}
+.btn-next{
+  font-size: 30px;
+  background-color: #dd1a1a;
+  color: #f1f1f1;
+  border-radius: 0 10px 10px 0;
+   padding: 0.25rem;
+   &:hover{
+    transform: scale(1.1);
+  }
+}
+.pagination_numbers{
+  font-size: 30px; 
+  padding: 0 1rem;
+  border-radius: 10px;
+    
+  &:hover{
+    transform: scale(1.1);
+    color: #839cec;
+  }
+}
+
+
 /*-------- Responsive min-width 600 px ------- */
 // @media screen and (min-width: 600px) and (max-width: 1000px){
   
@@ -637,4 +692,43 @@ font-family: 'Roboto Mono', monospace;*/
   grid-template-columns: 1fr 1fr 1fr 1fr;
  
 }
+
+  // ----Pagination buttons
+
+  footer{
+  
+  width: 90%;
+  left: 5rem;
+  background-color: rgba(250, 250, 250, 0);
+}
+.containerbuttonFooter{
+  
+  width: 50%;
+  justify-content: space-between;
+  background-color: #003cff1a;
+  padding: 0.25rem 0;
+  border-radius: 20px;
+}
+.btn-back{
+  font-size: 30px;
+  background-color: #dd1a1a97;
+  color: #f1f1f1;
+  border-radius: 10px 0 0 10px;
+  padding: 0.25rem;
+}
+.btn-next{
+  font-size: 30px;
+  background-color: #dd1a1a97;
+  color: #f1f1f1;
+  border-radius: 0 10px 10px 0;
+   padding: 1rem 0.25rem;
+}
+.pagination_numbers{
+  font-size: 30px; 
+  padding: 0 1rem;
+  background-color: #343d5bb8;
+  color: #e3e3e3;
+  
+}
+
 }

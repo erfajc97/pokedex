@@ -10,7 +10,7 @@ const Pokedex = () => {
   const [typePokemon, setTypePokemon] = useState([]);
   useEffect(() => {
     axios
-      .get(`https://pokeapi.co/api/v2/pokemon/`)
+      .get(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=1279`)
       .then((res) => setPokemon(res.data.results));
 
     axios
@@ -19,6 +19,25 @@ const Pokedex = () => {
   }, []);
 
   // console.log(typePokemon);
+
+
+  // Pagination-----------
+ 
+   const [page, setPage] = useState(1);
+   const lastIndex = page * 20;
+   const firstIndex = lastIndex - 20;
+   const pagination = pokemon?.slice(firstIndex, lastIndex);
+   const lastPage = Math.ceil(pokemon?.length / 20);
+
+      const numbers = [];
+
+      for (let i = page - 3; i <= page + 2; i++) {
+        if (i >= page && i <= lastPage) {
+          numbers.push(i);
+        }
+      }
+// --------------------------------
+
 
   const userName = useSelector((state) => state.userName);
   const navigate = useNavigate();
@@ -62,7 +81,7 @@ const Pokedex = () => {
         </select>
 
         <ul className="container__pokemonCard">
-          {pokemon.map((pokemon, index) => (
+          {pagination.map((pokemon, index) => (
             <PokemonCards
               key={pokemon.url ? pokemon.url : pokemon.pokemon.url}
               url={pokemon.url ? pokemon.url : pokemon.pokemon.url}
@@ -76,6 +95,33 @@ const Pokedex = () => {
           </button>
         </div>
       </div>
+
+      <footer>
+        <div className="containerbuttonFooter">
+          <button
+            className="btn-back"
+            onClick={() => setPage(page - 1)}
+            disabled={page === 1}>
+            <i className="bx bxs-chevrons-left"></i>
+          </button>
+
+          {numbers.map((number) => (
+            <button
+              key={number}
+              className="pagination_numbers"
+              onClick={() => setPage(number)}>
+              {number}
+            </button>
+          ))}
+
+          <button
+            className="btn-next"
+            onClick={() => setPage(page + 1)}
+            disabled={page === lastPage}>
+            <i className="bx bxs-chevrons-right"></i>
+          </button>
+        </div>
+      </footer>
     </div>
   );
 };
