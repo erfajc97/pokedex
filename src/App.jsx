@@ -18,7 +18,7 @@ function App() {
 
   setTimeout(() => {
     setLoadingPage(false);
-  }, 3000);
+  }, 1000);
 
   const switchOn = () => {
     setSwitchMode(!switchMode);

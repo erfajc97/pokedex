@@ -16,7 +16,7 @@ const PokedexId = ({ darkmode }) => {
       .then((res) => setPokemonId(res.data))
       .catch(() => navigate("/pokedex"));
   }, []);
-  // console.log(pokemonId);
+  console.log(pokemonId);
 
   function firstLetterUpCase(text) {
     let name = text?.split(" ");
@@ -73,6 +73,12 @@ const PokedexId = ({ darkmode }) => {
   let letterColor = {
     color: `${changeColorCardPokemon()}`,
   };
+
+    const hp = (pokemonId.stats?.[0].base_stat)
+    const attack = pokemonId.stats?.[1].base_stat; 
+    const defense = pokemonId.stats?.[2].base_stat; 
+    const speed = pokemonId.stats?.[5].base_stat; 
+
   return (
     <div className="container_pokedexId">
       <div style={myStyle} className="container_principal_info_pokedexId">
@@ -129,6 +135,48 @@ const PokedexId = ({ darkmode }) => {
                 </p>
               ))}
             </div>
+          </div>
+        </div>
+        <div className="container_stats">
+          <h3 className="titule_stats">Stats</h3>
+          <div className="container_progreso">
+            <p>HP</p>
+            <b> {pokemonId.stats?.[0].base_stat} </b>
+          </div>
+          <div className="barra_progreso">
+            150
+            <div style={{ width: `${hp}%` }} className="barra_absolute"></div>
+          </div>
+
+          <div className="container_progreso">
+            <p>Attack</p>
+            <b> {pokemonId.stats?.[1].base_stat} </b>
+          </div>
+          <div className="barra_progreso">
+            150
+            <div
+              style={{ width: `${attack}%` }}
+              className="barra_absolute "></div>
+          </div>
+          <div className="container_progreso">
+            <p>Defense</p>
+            <b> {pokemonId.stats?.[2].base_stat} </b>
+          </div>
+          <div className="barra_progreso">
+            150
+            <div
+              style={{ width: `${defense}%` }}
+              className="barra_absolute"></div>
+          </div>
+          <div className="container_progreso">
+            <p>Speed</p>
+            <b> {pokemonId.stats?.[5].base_stat} </b>
+          </div>
+          <div className="barra_progreso">
+            150
+            <div
+              style={{ width: `${speed}%` }}
+              className="barra_absolute"></div>
           </div>
         </div>
       </div>
