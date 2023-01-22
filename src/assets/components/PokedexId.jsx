@@ -74,10 +74,10 @@ const PokedexId = ({ darkmode }) => {
     color: `${changeColorCardPokemon()}`,
   };
 
-    const hp = (pokemonId.stats?.[0].base_stat)
-    const attack = pokemonId.stats?.[1].base_stat; 
-    const defense = pokemonId.stats?.[2].base_stat; 
-    const speed = pokemonId.stats?.[5].base_stat; 
+    const hp = ((pokemonId.stats?.[0].base_stat)/150)*100
+    const attack = (pokemonId.stats?.[1].base_stat / 150) * 100;
+    const defense = (pokemonId.stats?.[2].base_stat / 150) * 100;
+    const speed = (pokemonId.stats?.[5].base_stat / 150) * 100;
 
   return (
     <div className="container_pokedexId">
