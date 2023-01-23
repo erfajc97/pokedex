@@ -16,7 +16,7 @@ const PokedexId = ({ darkmode }) => {
       .then((res) => setPokemonId(res.data))
       .catch(() => navigate("/pokedex"));
   }, []);
-  console.log(pokemonId);
+
 
   function firstLetterUpCase(text) {
     let name = text?.split(" ");
@@ -74,10 +74,11 @@ const PokedexId = ({ darkmode }) => {
     color: `${changeColorCardPokemon()}`,
   };
 
-    const hp = ((pokemonId.stats?.[0].base_stat)/200)*100
-    const attack = (pokemonId.stats?.[1].base_stat / 200) * 100;
-    const defense = (pokemonId.stats?.[2].base_stat / 200) * 100;
-    const speed = (pokemonId.stats?.[5].base_stat / 200) * 100;
+  const porcentaje = (index) => {
+   const width = ((pokemonId.stats?.[index].base_stat)/200)*100
+  return `${width}%`
+}
+    
 
   return (
     <div className="container_pokedexId">
@@ -145,7 +146,9 @@ const PokedexId = ({ darkmode }) => {
           </div>
           <div className="barra_progreso">
             200
-            <div style={{ width: `${hp}%` }} className="barra_absolute"></div>
+            <div
+              style={{ width: porcentaje(0) }}
+              className="barra_absolute"></div>
           </div>
 
           <div className="container_progreso">
@@ -155,7 +158,7 @@ const PokedexId = ({ darkmode }) => {
           <div className="barra_progreso">
             200
             <div
-              style={{ width: `${attack}%` }}
+              style={{ width: porcentaje(1) }}
               className="barra_absolute "></div>
           </div>
           <div className="container_progreso">
@@ -165,7 +168,7 @@ const PokedexId = ({ darkmode }) => {
           <div className="barra_progreso">
             200
             <div
-              style={{ width: `${defense}%` }}
+              style={{ width: porcentaje(2) }}
               className="barra_absolute"></div>
           </div>
           <div className="container_progreso">
@@ -175,7 +178,7 @@ const PokedexId = ({ darkmode }) => {
           <div className="barra_progreso">
             200
             <div
-              style={{ width: `${speed}%` }}
+              style={{ width: porcentaje(5) }}
               className="barra_absolute"></div>
           </div>
         </div>

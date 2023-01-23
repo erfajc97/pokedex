@@ -15,7 +15,7 @@ const PokemonCards = ({ url, darkmode }) => {
       ) 
   }, []);
 
-  // console.log(pokemon);
+ 
 
   function firstLetterUpCase(text) {
     let name = text?.split(" ");
@@ -76,11 +76,15 @@ const PokemonCards = ({ url, darkmode }) => {
 
   const imgPokemon = pokemon.sprites?.other.dream_world.front_default;
 
+  const funcNavigate = () =>{
+    navigate(`/pokedex/${pokemon.id}`);
+    window.scroll(0,0);
+    console.log(window.scroll);
+
+  }
+
   return (
-    <div
-      style={myStyle}
-      onClick={() => navigate(`/pokedex/${pokemon.id}`)}
-      className="container_pokemons">
+    <div style={myStyle} onClick={funcNavigate} className="container_pokemons">
       <div
         style={{
           background: changeColorCardPokemon(),

@@ -8,23 +8,25 @@ const Pokedex = ({darkmode}) => {
   const [pokemon, setPokemon] = useState([]);
   const [searchId, setSearchId] = useState("");
   const [typePokemon, setTypePokemon] = useState([]);
+  const [typeSelected, setTypeSelected] = useState("All pokemons")
    
   useEffect(() => {
-    axios
-      .get(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=1279`)
-      .then((res) =>{
-        setPokemon(res.data.results)
-       
-      }
+    if (typeSelected !== "All pokemons") {
+      axios.get(typeSelected).then((res) => setPokemon(res.data.pokemon));
+    } else {
+      axios
+        .get(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=1279`)
+        .then((res) => {
+          setPokemon(res.data.results);
+        });
 
-      );
+      axios
+        .get(`https://pokeapi.co/api/v2/type/`)
+        .then((res) => setTypePokemon(res.data.results));
+    }
+  }, [typeSelected]);
 
-    axios
-      .get(`https://pokeapi.co/api/v2/type/`)
-      .then((res) => setTypePokemon(res.data.results));
-  }, []);
-
-  // console.log(typePokemon);
+  
 
 
   // Pagination-----------
@@ -56,7 +58,7 @@ const Pokedex = ({darkmode}) => {
   };
 
   const filterType = (e) => {
-    axios.get(e.target.value).then((res) => setPokemon(res.data.pokemon));
+    setTypeSelected(e.target.value);
     
   };
 
@@ -91,7 +93,10 @@ const Pokedex = ({darkmode}) => {
           </button>
         </div>
         <select onChange={filterType} className="containerSuggest">
-          <option className="option">All Pokemons</option>
+          <option value={"All pokemons"} className="option">
+            All Pokemons
+          </option>
+
           {typePokemon?.map((p, index) => (
             <option className="option" value={p.url} key={index}>
               {firstLetterUpCase(p?.name)}

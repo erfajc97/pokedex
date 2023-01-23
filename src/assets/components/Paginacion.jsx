@@ -16,7 +16,6 @@ const Paginacion = () => {
   const paginacion = pokemon?.slice(firstIndex, lastIndex);
   const lastPage = Math.ceil(pokemon?.length / 20);
 
-//   console.log(paginacion);
 
    const numbers = [];
 
