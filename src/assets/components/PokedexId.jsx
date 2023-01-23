@@ -74,10 +74,10 @@ const PokedexId = ({ darkmode }) => {
     color: `${changeColorCardPokemon()}`,
   };
 
-    const hp = ((pokemonId.stats?.[0].base_stat)/150)*100
-    const attack = (pokemonId.stats?.[1].base_stat / 150) * 100;
-    const defense = (pokemonId.stats?.[2].base_stat / 150) * 100;
-    const speed = (pokemonId.stats?.[5].base_stat / 150) * 100;
+    const hp = ((pokemonId.stats?.[0].base_stat)/200)*100
+    const attack = (pokemonId.stats?.[1].base_stat / 200) * 100;
+    const defense = (pokemonId.stats?.[2].base_stat / 200) * 100;
+    const speed = (pokemonId.stats?.[5].base_stat / 200) * 100;
 
   return (
     <div className="container_pokedexId">
@@ -144,7 +144,7 @@ const PokedexId = ({ darkmode }) => {
             <b> {pokemonId.stats?.[0].base_stat} </b>
           </div>
           <div className="barra_progreso">
-            150
+            200
             <div style={{ width: `${hp}%` }} className="barra_absolute"></div>
           </div>
 
@@ -153,7 +153,7 @@ const PokedexId = ({ darkmode }) => {
             <b> {pokemonId.stats?.[1].base_stat} </b>
           </div>
           <div className="barra_progreso">
-            150
+            200
             <div
               style={{ width: `${attack}%` }}
               className="barra_absolute "></div>
@@ -163,7 +163,7 @@ const PokedexId = ({ darkmode }) => {
             <b> {pokemonId.stats?.[2].base_stat} </b>
           </div>
           <div className="barra_progreso">
-            150
+            200
             <div
               style={{ width: `${defense}%` }}
               className="barra_absolute"></div>
@@ -173,7 +173,7 @@ const PokedexId = ({ darkmode }) => {
             <b> {pokemonId.stats?.[5].base_stat} </b>
           </div>
           <div className="barra_progreso">
-            150
+            200
             <div
               style={{ width: `${speed}%` }}
               className="barra_absolute"></div>

@@ -77,7 +77,6 @@ const PokemonCards = ({ url, darkmode }) => {
   const imgPokemon = pokemon.sprites?.other.dream_world.front_default;
 
   return (
-
     <div
       style={myStyle}
       onClick={() => navigate(`/pokedex/${pokemon.id}`)}
@@ -90,7 +89,7 @@ const PokemonCards = ({ url, darkmode }) => {
       <div className="container_img_pokemon">
         <img
           className="img_idx animate__animated animate__heartBeat"
-          src={imgPokemon? imgPokemon : pikachu}
+          src={imgPokemon ? imgPokemon : pikachu}
           alt=""
         />
       </div>
@@ -108,19 +107,31 @@ const PokemonCards = ({ url, darkmode }) => {
       <div className="container_grid_info_card">
         <div className="info-abilities_card">
           <p>Hp</p>
-          <b> {pokemon.stats?.[0].base_stat} </b>
+          <b style={{ color: changeColorCardPokemon() }}>
+            {" "}
+            {pokemon.stats?.[0].base_stat}{" "}
+          </b>
         </div>
         <div className="info-abilities_card">
           <p>Attack</p>
-          <b> {pokemon.stats?.[1].base_stat} </b>
+          <b style={{ color: changeColorCardPokemon() }}>
+            {" "}
+            {pokemon.stats?.[1].base_stat}{" "}
+          </b>
         </div>
         <div className="info-abilities_card">
           <p>Defense</p>
-          <b> {pokemon.stats?.[2].base_stat} </b>
+          <b style={{ color: changeColorCardPokemon() }}>
+            {" "}
+            {pokemon.stats?.[2].base_stat}{" "}
+          </b>
         </div>
         <div className="info-abilities_card">
           <p>Speed</p>
-          <b> {pokemon.stats?.[5].base_stat} </b>
+          <b style={{ color: changeColorCardPokemon() }}>
+            {" "}
+            {pokemon.stats?.[5].base_stat}{" "}
+          </b>
         </div>
       </div>
     </div>
