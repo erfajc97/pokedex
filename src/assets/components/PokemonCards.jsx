@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import pikachu from '../img/pikachu.png'
 
 const PokemonCards = ({ url, darkmode }) => {
   const [pokemon, setPokemon] = useState({});
@@ -8,7 +9,10 @@ const PokemonCards = ({ url, darkmode }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(url).then((res) => setPokemon(res.data));
+    axios.get(url).then((res) => {
+      setPokemon(res.data)
+    } 
+      ) 
   }, []);
 
   // console.log(pokemon);
@@ -70,7 +74,10 @@ const PokemonCards = ({ url, darkmode }) => {
     color: `${changeColorCardPokemon()}`,
   };
 
+  const imgPokemon = pokemon.sprites?.other.dream_world.front_default;
+
   return (
+
     <div
       style={myStyle}
       onClick={() => navigate(`/pokedex/${pokemon.id}`)}
@@ -83,7 +90,7 @@ const PokemonCards = ({ url, darkmode }) => {
       <div className="container_img_pokemon">
         <img
           className="img_idx animate__animated animate__heartBeat"
-          src={pokemon.sprites?.other.dream_world.front_default}
+          src={imgPokemon? imgPokemon : pikachu}
           alt=""
         />
       </div>

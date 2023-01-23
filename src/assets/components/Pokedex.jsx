@@ -8,11 +8,16 @@ const Pokedex = ({darkmode}) => {
   const [pokemon, setPokemon] = useState([]);
   const [searchId, setSearchId] = useState("");
   const [typePokemon, setTypePokemon] = useState([]);
-  
+   
   useEffect(() => {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=1279`)
-      .then((res) => setPokemon(res.data.results));
+      .then((res) =>{
+        setPokemon(res.data.results)
+       
+      }
+
+      );
 
     axios
       .get(`https://pokeapi.co/api/v2/type/`)
@@ -52,16 +57,22 @@ const Pokedex = ({darkmode}) => {
 
   const filterType = (e) => {
     axios.get(e.target.value).then((res) => setPokemon(res.data.pokemon));
-
     
   };
+
+    function firstLetterUpCase(text) {
+      let name = text?.split(" ");
+      return name?.map((e) => e[0].toUpperCase() + e.slice(1)).join(" ");
+    }
+
 
   return (
     <div className="container_Pokedex">
       <div className="container_info_pokedex">
         <h2 className="title_Pokedex">
-          Welcome <b style={{ color: darkmode ? "#6791B9" : "#dd1a1a" }}
-          >{userName}</b>, here you can find your favorite POKEMON
+          Welcome{" "}
+          <b style={{ color: darkmode ? "#6791B9" : "#dd1a1a" }}>{userName}</b>,
+          here you can find your favorite POKEMON
         </h2>
         <div className="container_search">
           <input
@@ -80,10 +91,10 @@ const Pokedex = ({darkmode}) => {
           </button>
         </div>
         <select onChange={filterType} className="containerSuggest">
-          <option>All Pokemons</option>
+          <option className="option">All Pokemons</option>
           {typePokemon?.map((p, index) => (
             <option className="option" value={p.url} key={index}>
-              {p?.name}
+              {firstLetterUpCase(p?.name)}
             </option>
           ))}
         </select>

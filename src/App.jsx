@@ -13,7 +13,7 @@ import ProtectedRoutes from "./assets/components/ProtectedRoute";
 function App() {
   const [loadingPage, setLoadingPage] = useState(true);
   const [switchMode, setSwitchMode] = useState(false);
-  const [darkmode,setDarkmode] = useState(false)
+  const [darkmode,setDarkmode] = useState(false);
   const userName = useSelector((state) => state.userName);
 
   setTimeout(() => {
